@@ -1,0 +1,43 @@
+{
+  "name": "simple-chat-server",
+  "version": "0.0.1",
+  "description": "Simple chat server made with Koa + Socket.io",
+  "main": "src/app.js",
+  "repository": "https://www.github.com/raskardev/simple-chat",
+  "author": "raskardev <alexcdev95@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "node .",
+    "dev": "nodemon -r dotenv/config .",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "test": "ava"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run test"
+    }
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "dotenv": "^8.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.8.0",
+    "eslint-plugin-ava": "^9.0.0",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^3.1.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.0.0",
+    "@koa/router": "^8.0.5",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-socket-2": "^1.2.0",
+    "mongoose": "^5.8.3"
+  }
+}
